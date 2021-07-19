@@ -1,0 +1,32 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:38372/",
+      "sslPort": 0 //44344
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:38372/",
+      "launchUrl": "http://localhost:38372/health",
+      "use64Bit": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local"
+      }
+    },
+    "CTechnology.BookPricingApi.Api": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:22009/health",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local"
+        //"ASPNETCORE_HTTPS_PORT": "44378",
+      },
+      "applicationUrl": "http://localhost:22009/"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <ProjectGuid>{9C3E4C9A-9584-41F7-B907-E6026DDDDDC6}</ProjectGuid>
+        <IsPackable>false</IsPackable>
+        <RootNamespace>CTechnology.BookPricingApi.Api.Tests.Unit</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\src\Api\CTechnology.BookPricingApi.Api.csproj" />
+    </ItemGroup>
+
+</Project>

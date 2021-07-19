@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>net5.0</TargetFramework>
+	<ProjectGuid>{4E86DC98-C9DF-4BE9-A37D-AD75BE0F87E0}</ProjectGuid>
+	<IsPackable>false</IsPackable>
+	<RootNamespace>CTechnology.BookPricingApi.Tests.Pact.Consumer</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup Label="Package References">
+    <PackageReference Include="Cds.Foundation.Test.Pact" Version="2.6.0" />
+    <PackageReference Include="PactNet.Linux.x64" Version="2.6.1" />
+    <PackageReference Include="PactNet.Windows" Version="2.6.1" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
+    <PackageReference Include="coverlet.msbuild" Version="3.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.5" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
