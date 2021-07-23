@@ -25,10 +25,6 @@
       <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
       <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
     </ItemGroup>
-  
-
-    <ItemGroup Label="Project References">
-    </ItemGroup>
 
     <!-- Tools - Command line tools which can be run using 'dotnet [Tool Name]'. -->
     <ItemGroup Label="Tools">
@@ -38,6 +34,11 @@
   
     <ItemGroup Label="Internals Visibility">
       <InternalsVisibleToTest Include="CTechnology.BookPricingApi.Api.Tests.Unit" />
+    </ItemGroup>
+  
+    <ItemGroup>
+      <ProjectReference Include="..\Domain\CTechnology.BookPricingApi.Domain.csproj" />
+      <ProjectReference Include="..\Infrastructure\CTechnology.BookPricingApi.Infrastructure.csproj" />
     </ItemGroup>
 
     <PropertyGroup>

@@ -7,6 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using CTechnology.BookPricingApi.Abstractions;
+using CTechnology.BookPricingApi.Repositories;
+using CTechnology.BookPricingApi.Api.Features.BookPricing.Handlers;
 
 namespace CTechnology.BookPricingApi.Api.Bootstrap
 {
@@ -70,6 +73,13 @@ namespace CTechnology.BookPricingApi.Api.Bootstrap
                     .AddUnifiedRestApi(options => options.UseCamelCaseNamingPolicy());
 
             // [You can add your own application services here...]
+
+            services
+                .AddSingleton<IBookPricesRepository, BookPricesInMemoryRepository>();
+
+            services
+                .AddSingleton<IBookPriceQueriesHandler, BookPriceQueriesHandler>()
+                .AddSingleton<IBookPriceCommandsHandler, BookPriceCommandsHandler>();
         }
 
         /// <summary>
