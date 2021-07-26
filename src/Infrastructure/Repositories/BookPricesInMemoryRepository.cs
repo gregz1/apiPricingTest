@@ -15,7 +15,7 @@ namespace CTechnology.BookPricingApi.Repositories
     public class BookPricesInMemoryRepository : IBookPricesRepository
     {
         private static string _bookPricesFileName = @"Dataset\book-prices.json";
-        private static readonly Dictionary<Guid, BookPriceDto> _bookPrices = InitializeInMemoryDictionary();
+        private readonly Dictionary<Guid, BookPriceDto> _bookPrices = InitializeInMemoryDictionary();
 
         public BookPricesInMemoryRepository()
         {
