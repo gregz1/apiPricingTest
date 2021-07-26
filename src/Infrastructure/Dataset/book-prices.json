@@ -1,0 +1,26 @@
+[
+  {
+    "id": "94235bd9-a208-4b53-aca5-bd2b665656fb",
+    "bookId": "8500c31a-b16d-4dab-81bd-dd84e9038a41",
+    "value": 39.00,
+    "currency": "EUR",
+    "symbol": "\u20AC",
+    "raw": "39.00\u20AC"
+  },
+  {
+    "id": "cc3372cf-cd0c-4c85-b0f6-879410b51226",
+    "bookId": "9276d80b-2e30-4633-875b-8e55bc1408e8",
+    "value": 39.00,
+    "currency": "EUR",
+    "symbol": "\u20AC",
+    "raw": "39.00\u20AC"
+  },
+  {
+    "id": "761f02eb-1014-4ed1-9ec9-da554ef65f72",
+    "bookId": "2a4af0a9-f139-4ad5-9bd0-4671c43d6264",
+    "value": 54.00,
+    "currency": "EUR",
+    "symbol": "\u20AC",
+    "raw": "54.00\u20AC"
+  }
+]
