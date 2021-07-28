@@ -35,6 +35,11 @@ namespace CTechnology.BookPricingApi.Repositories
             return await Task.FromResult<BookPrice?>(null);
         }
 
+        public async Task<List<BookPrice>> FindAllAsync(Guid bookId)
+        {
+            return await Task.FromResult(_bookPrices.Values.Where(v => v.BookId == bookId).Select(v => v.ToDomain()).ToList());
+        }
+
         private static Dictionary<Guid, BookPriceDto> InitializeInMemoryDictionary()
         {
             var path = Assembly.GetExecutingAssembly().Location.Replace(Assembly.GetExecutingAssembly().GetName().Name + ".dll", "");

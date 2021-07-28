@@ -65,13 +65,30 @@ namespace CTechnology.BookPricingApi.Api.Features.BookPricing.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesErrorResponseType(typeof(ProblemDetails))]
-        public async Task<ActionResult<BookPrice>> GetOne(Guid id)
+        public async Task<ActionResult<BookPrice>> GetOne([FromRoute] Guid id)
         {
             var query = new GetBookPriceQuery(id);
             var result = await _queriesHandler.HandleAsync(query);
             return result switch
             {
                 SuccessHandleResult<BookPrice> success => Ok(success.Result),
+                NotFoundHandleResult _ => NotFound(),
+                _ => throw new NotSupportedException()
+            };
+        }
+
+        [HttpGet]
+        [Produces(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesErrorResponseType(typeof(ProblemDetails))]
+        public async Task<ActionResult<List<BookPrice>>> FindAll([FromQuery] Guid bookId)
+        {
+            var query = new FindAllBookPricesQuery(bookId);
+            var result = await _queriesHandler.HandleAsync(query);
+            return result switch
+            {
+                SuccessHandleResult<IEnumerable<BookPrice>> success => Ok(success.Result),
                 NotFoundHandleResult _ => NotFound(),
                 _ => throw new NotSupportedException()
             };
