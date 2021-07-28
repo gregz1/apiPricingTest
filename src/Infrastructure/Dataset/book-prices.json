@@ -8,6 +8,14 @@
     "raw": "39.00\u20AC"
   },
   {
+    "id": "4c2e45ba-9564-4b72-a1bd-a20bed322675",
+    "bookId": "8500c31a-b16d-4dab-81bd-dd84e9038a41",
+    "value": 35.99,
+    "currency": "EUR",
+    "symbol": "\u20AC",
+    "raw": "35.99\u20AC"
+  },
+  {
     "id": "cc3372cf-cd0c-4c85-b0f6-879410b51226",
     "bookId": "9276d80b-2e30-4633-875b-8e55bc1408e8",
     "value": 39.00,

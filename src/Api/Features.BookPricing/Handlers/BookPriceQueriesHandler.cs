@@ -20,5 +20,12 @@ namespace CTechnology.BookPricingApi.Api.Features.BookPricing.Handlers
             if (bookPrice is null) return HandleResult.NotFound();
             return HandleResult.Success(bookPrice.ToModel());
         }
+
+        public async Task<HandleResult> HandleAsync(FindAllBookPricesQuery query)
+        {
+            var bookPrices = await _repository.FindAllAsync(query.BookId);
+            if (bookPrices is null) return HandleResult.NotFound();
+            return HandleResult.Success(bookPrices.ToModel());
+        }
     }
 }
