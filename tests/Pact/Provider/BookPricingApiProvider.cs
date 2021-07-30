@@ -1,7 +1,14 @@
-﻿using Cds.Foundation.Test.Pact.Provider;
+﻿using System;
+
+using Cds.Foundation.Test.Pact.Provider;
+
+using CTechnology.BookPricingApi.Abstractions;
 using CTechnology.BookPricingApi.Api.Bootstrap;
+using CTechnology.BookPricingApi.Repositories;
+
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 namespace CTechnology.BookPricingApi.Tests.Pact.Provider
@@ -14,7 +21,7 @@ namespace CTechnology.BookPricingApi.Tests.Pact.Provider
         /// <summary>
         /// Initializes a new instance of the <see cref="BookPricingApiProvider"/> class
         /// </summary>
-        public BookPricingApiProvider() : base()
+        public BookPricingApiProvider() : base(new Uri("http://a08pact001.cdbdx.biz/"), "book-pricing-api", "master")
         {
             Host = Program.CreateHostBuilder(new string[0])
                     .ConfigureWebHostDefaults(builder =>
@@ -22,15 +29,7 @@ namespace CTechnology.BookPricingApi.Tests.Pact.Provider
                             .UseUrls(WebHostUri)
                             .ConfigureTestServices(services =>
                             {
-
-            #pragma warning disable S125
-                                //Add your mocks here
-                                /*Exemple to mock HttpClient :
-                                 * services
-                                   .AddHttpClient([MyHttpClient])
-                                   .AddHttpMessageHandler(() => new GlobalServiceHandler());
-                                */
-            #pragma warning restore S125
+                                services.AddSingleton<IBookPricesRepository, BookPricesInMemoryRepository>();
                             }))
                             .Build();
 

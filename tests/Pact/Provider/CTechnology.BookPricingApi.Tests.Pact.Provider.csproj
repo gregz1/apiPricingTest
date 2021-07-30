@@ -7,6 +7,12 @@
     <RootNamespace>CTechnology.BookPricingApi.Tests.Pact.Provider</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Json\**" />
+    <EmbeddedResource Remove="Json\**" />
+    <None Remove="Json\**" />
+  </ItemGroup>
+
   <ItemGroup Label="Package References">
     <PackageReference Include="Cds.Foundation.Test" Version="2.6.0" />
     <PackageReference Include="Cds.Foundation.Test.Pact" Version="2.6.0" />
@@ -17,11 +23,6 @@
     <PackageReference Include="coverlet.msbuild" Version="3.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.5" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
-  </ItemGroup>
-
-  
-  <ItemGroup>
-    <Folder Include="Json\" />
   </ItemGroup>
 
   <ItemGroup>

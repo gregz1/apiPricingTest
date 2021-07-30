@@ -33,7 +33,9 @@ namespace CTechnology.BookPricingApi.Api.Features.BookPricing.Controllers
         /// <response code="201">Success: The price is created.</response>
         /// <response code="400">Bad Request: Check details in body.</response>
         [HttpPost]
-        [Produces(MediaTypeNames.Application.Json)]
+        [Consumes("application/json")]
+        [Produces("application/json")]
+        //[Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesErrorResponseType(typeof(ProblemDetails))]
         public async Task<ActionResult> Post([FromBody] CreateBookPriceCommand command)
@@ -41,7 +43,7 @@ namespace CTechnology.BookPricingApi.Api.Features.BookPricing.Controllers
             var result = await _commandsHandler.HandleAsync(command);
             return result switch
             {
-                SuccessHandleResult success => CreatedAtAction(nameof(GetOne), new { id = success.Id }, null),
+                SuccessHandleResult success => CreatedAtRoute(nameof(GetOne), new { id = success.Id }, result),
                 BadRequestHandleResult _ => BadRequest(),
                 _ => throw new NotSupportedException()
             };
