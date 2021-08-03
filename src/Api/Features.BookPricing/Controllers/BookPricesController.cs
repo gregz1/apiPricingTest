@@ -33,9 +33,7 @@ namespace CTechnology.BookPricingApi.Api.Features.BookPricing.Controllers
         /// <response code="201">Success: The price is created.</response>
         /// <response code="400">Bad Request: Check details in body.</response>
         [HttpPost]
-        [Consumes("application/json")]
-        [Produces("application/json")]
-        //[Produces(MediaTypeNames.Application.Json)]
+        [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesErrorResponseType(typeof(ProblemDetails))]
         public async Task<ActionResult> Post([FromBody] CreateBookPriceCommand command)
