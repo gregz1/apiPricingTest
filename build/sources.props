@@ -2,9 +2,9 @@
   <Import Project="$(DotNetRestoreSourcePropsPath)" Condition="'$(DotNetRestoreSourcePropsPath)' != ''"/>
   <PropertyGroup Label="RestoreSources">
     <RestoreSources>$(DotNetRestoreSources)</RestoreSources>
-    <RestoreSources Condition="'$(DotNetBuildOffline)' != 'true'">
+ <!--   <RestoreSources Condition="'$(DotNetBuildOffline)' != 'true'">
       $(RestoreSources);
       http://tfsdropserver.cdbdx.biz:8082/repository/NuGet-NetCore-Official/;
-    </RestoreSources>
+    </RestoreSources>-->
   </PropertyGroup>
 </Project>
