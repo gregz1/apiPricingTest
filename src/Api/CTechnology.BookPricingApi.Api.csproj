@@ -14,12 +14,12 @@
     </PropertyGroup>
 
     <ItemGroup Label="Package References">
-      <PackageReference Include="Cds.Foundation.Logging.Log4net" Version="5.0.0" />
+    <!--  <PackageReference Include="Cds.Foundation.Logging.Log4net" Version="5.0.0" />
       <PackageReference Include="Cds.Foundation.Logging.Log4Net.Monithor" Version="5.0.0" />
       <PackageReference Include="Cds.Foundation.Web" Version="5.0.0" />
       <PackageReference Include="Cds.Foundation.Web.HealthChecks" Version="5.0.0" />
       <PackageReference Include="Cds.Foundation.Web.Mvc" Version="5.0.0" />
-      <PackageReference Include="Cds.Foundation.Configuration.Platforms" Version="5.0.0" />
+      <PackageReference Include="Cds.Foundation.Configuration.Platforms" Version="5.0.0" />-->
       <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" Condition="'$(UseSwagger)' == 'false' AND '$(UseApiVersioning)' == 'true'" />
       <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" Condition="'$(UseSwagger)' == 'true' AND '$(UseApiVersioning)' == 'true'" />
       <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
@@ -42,16 +42,16 @@
     </ItemGroup>
 
     <PropertyGroup>
-      <SharedRuleSetPath>\\CLO-NAS\cds-informatique\00_Partage_Sécurisé\dotnet\sonar\sonar-platinium-1.0.ruleset</SharedRuleSetPath>
+    <!--  <SharedRuleSetPath>\\CLO-NAS\cds-informatique\00_Partage_Sécurisé\dotnet\sonar\sonar-platinium-1.0.ruleset</SharedRuleSetPath>-->
       <LocalRuleSetPath>..\..\.sonarlint\sonar-platinium-1.0.ruleset</LocalRuleSetPath>
     </PropertyGroup>
 
     <Choose>
-      <When Condition="Exists('$(SharedRuleSetPath)')">
+    <!--  <When Condition="Exists('$(SharedRuleSetPath)')">
         <PropertyGroup Condition="'$(CodeAnalysisRuleSet)' == '' ">
           <CodeAnalysisRuleSet>$(SharedRuleSetPath)</CodeAnalysisRuleSet>
         </PropertyGroup>
-      </When>
+      </When>-->
       <When Condition="Exists('$(LocalRuleSetPath)')">
         <PropertyGroup Condition="'$(CodeAnalysisRuleSet)' == '' ">
           <CodeAnalysisRuleSet>$(LocalRuleSetPath)</CodeAnalysisRuleSet>
