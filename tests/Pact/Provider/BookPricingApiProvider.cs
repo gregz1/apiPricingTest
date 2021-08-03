@@ -22,7 +22,7 @@ namespace CTechnology.BookPricingApi.Tests.Pact.Provider
         /// <summary>
         /// Initializes a new instance of the <see cref="BookPricingApiProvider"/> class
         /// </summary>
-        public BookPricingApiProvider() : base(new Uri("http://a08pact001.cdbdx.biz/"), "book-pricing-api-v1", "master")
+        public BookPricingApiProvider() : base(new Uri(""), "book-pricing-api-v1", "master")
         {
             Host = Program.CreateHostBuilder(new string[0])
                     .ConfigureWebHostDefaults(builder =>
