@@ -41,7 +41,7 @@ namespace CTechnology.BookPricingApi.Api.Features.BookPricing.Controllers
             var result = await _commandsHandler.HandleAsync(command);
             return result switch
             {
-                SuccessHandleResult success => CreatedAtAction(nameof(GetOne), new { id = success.Id }, null),
+                SuccessHandleResult success => CreatedAtRoute(nameof(GetOne), new { id = success.Id }, result),
                 BadRequestHandleResult _ => BadRequest(),
                 _ => throw new NotSupportedException()
             };

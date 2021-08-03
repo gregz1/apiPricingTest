@@ -1,5 +1,7 @@
-﻿using Cds.Foundation.Test.Pact.Provider;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+
+using Cds.Foundation.Test.Pact.Provider;
+
 using Xunit;
 using Xunit.Abstractions;
 
@@ -19,9 +21,7 @@ namespace CTechnology.BookPricingApi.Tests.Pact.Provider
         {
         }
 
-#pragma warning disable S125
-        //[Fact]
-        //public Task Provider_BookPricingApi() => EnsureProviderHonoursPactAsync();
-#pragma warning restore S125
+        [Fact]
+        public Task Provider_BookPricingApi() => EnsureProviderHonoursPactAsync();
     }
 }
